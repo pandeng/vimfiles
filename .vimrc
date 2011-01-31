@@ -56,19 +56,31 @@ set mat=5  " Bracket blinking.
 set novisualbell  " No blinking .
 set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
+
+"Taglist
+let Tlist_Auto_Open=0 " let the tag list open automagically
+let Tlist_Compact_Format = 1 " show small menu
+let Tlist_Ctags_Cmd = 'ctags' " location of ctags
+let Tlist_Enable_Fold_Column = 0 " do show folding tree
+let Tlist_Exist_OnlyWindow = 1 " if you are the last, kill  yourself
+let Tlist_File_Fold_Auto_Close = 0 " fold closed other trees
+let Tlist_Sort_Type = "name" " order by 
+let Tlist_Use_Right_Window = 1 " split to the right side of the screen
+let Tlist_WinWidth = 40 " 
  
 " gvim specific
 set mousehide  " Hide mouse after chars typed
 set mouse=a  " Mouse in all modes
 
 " Backups & Files
-set backup                     " Enable creation of backup file.
+set backup                   " Enable creation of backup file.
 set backupdir=~/.vim/backups " Where backups will go.
 set directory=~/.vim/tmp     " Where temporary files will go.
 
 " Map
-set pastetoggle=<F9>
+set pastetoggle=<F12>
 nmap j gj
 nmap k gk
 map <silent> <F5> :!ctags -R --exclude=.svn --exclude=.git --exclude=log *<CR>
 map <silent> <F7> :NERDTreeToggle<CR>
+map <silent> <F9> :TlistToggle<CR> 
